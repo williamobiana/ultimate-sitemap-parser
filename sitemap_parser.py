@@ -4,10 +4,12 @@
 # pip install ultimate-sitemap-parser
 from usp.tree import sitemap_tree_for_homepage
 
+filename = 'report.txt'
+
 def getPagesFromSitemap(fullDomain):
     #listPagesRaw = []
     tree = sitemap_tree_for_homepage(fullDomain)
-    with open('log.txt', 'w') as file:
+    with open(filename, 'w') as file:
         for page in tree.all_pages():
             #listPagesRaw.append(page.url)
             file.write(page.url +"\n")
